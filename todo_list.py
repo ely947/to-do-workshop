@@ -20,8 +20,9 @@ def add_to_list(my_list):
 
 def view_list(my_list):
     """Print each item in the list."""
-
-    print "The view_list function has not yet been written"
+    
+    for task in my_list:
+        print task
 
 
 def display_main_menu(my_list):
