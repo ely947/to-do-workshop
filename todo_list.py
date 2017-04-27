@@ -13,7 +13,9 @@ def add_to_list(my_list):
     """Takes user input and adds it as a new item to the end of the list."""
 
     new_task = raw_input("What do you want to add to your list? ")
-    my_list.append(new_task)
+    list_number = int(raw_input("Where do you want to put this item in your list? ")) - 1
+    my_list.insert(list_number, new_task)
+    # print my_list[0]
     # print my_list
     return my_list
 
@@ -30,9 +32,10 @@ def display_main_menu(my_list):
 
     user_options = """
     \nWould you like to:
-    A. Add a new item
+    A. Add a new item to your list
     B. View list
     C. Quit the program
+    D. Remove first item in list
     >>> """
 
     while True:
@@ -44,6 +47,8 @@ def display_main_menu(my_list):
             view_list(my_list)
         elif user_choice == "C":
             break
+        elif user_choice == "D":
+            del my_list[0]
         else:
             print "Sorry! That's not a valid choice."
 
